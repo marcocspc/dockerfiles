@@ -3,6 +3,8 @@ MAINTAINER marcocspc
 
 RUN apt-get update
 RUN apt-get install openvpn -y
-RUN rm -rf /etc/openvpn/*
+ADD /openvpn-run.sh /usr/local/sbin
+RUN chmod +x /usr/local/sbin/openvpn-run.sh
+RUN sudo echo "America/Fortaleza" > /etc/timezone
 
-ENTRYPOINT /usr/sbin/openvpn --config /etc/openvpn/server.conf && /bin/bash 
+CMD openvpn-run.sh 
