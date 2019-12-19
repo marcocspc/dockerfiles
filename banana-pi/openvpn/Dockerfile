@@ -5,4 +5,4 @@ RUN apt-get update
 RUN apt-get install openvpn -y
 RUN rm -rf /etc/openvpn/*
 
-ENTRYPOINT /usr/sbin/openvpn /etc/openvpn/server.conf --daemon && bash 
+ENTRYPOINT /usr/sbin/openvpn --config /etc/openvpn/server.conf && /bin/bash 
