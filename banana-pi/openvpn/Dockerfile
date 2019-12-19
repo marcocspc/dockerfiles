@@ -5,6 +5,6 @@ RUN apt-get update
 RUN apt-get install openvpn -y
 ADD /openvpn-run.sh /usr/local/sbin
 RUN chmod +x /usr/local/sbin/openvpn-run.sh
-RUN sudo echo "America/Fortaleza" > /etc/timezone
+RUN echo "America/Fortaleza" > /etc/timezone
 
 CMD openvpn-run.sh 
