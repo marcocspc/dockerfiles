@@ -17,7 +17,7 @@ docker run -d \
     --name pihole \
     -p 53:53/tcp -p 53:53/udp \
     -p 8080:8080 \
-    -p 80443:443 \
+    -p 60443:443 \
     -e TZ="America/Fortaleza" \
     -v "/some/bind/dir:/etc/pihole/" \
     -v "/some/bind/dir:/etc/dnsmasq.d/" \
